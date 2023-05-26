@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -6,17 +7,17 @@ const Header = () => {
               <h1>Morir Soñando</h1>
               <h2>Authentic Dominican cuisine</h2>
               <nav>
-                    <span>Home</span>
+                    <Link to='/'>Home</Link>
                     <br/>
-                    <span>Order Here</span>
+<Link to='/menu'>Order Here</Link>
                     <br/>
-                    <span>Log In</span>
+<Link to='/login'>Login</Link>
                     <br/>
-                    <span>Sign Up</span>
+<Link to='/signUp'>Sign Up</Link>
                     <br/>
-                    <span>View Cart</span>
+<Link to='/cart'>View Cart</Link>
                     <br/>
-                    <span>Catering</span>
+                    <Link to='/catering'>Catering</Link>
                     <br/>
               </nav>
     </div>

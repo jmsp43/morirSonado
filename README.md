@@ -34,4 +34,3 @@ Stretch goals:
 [] Order history page
 [] loyalty points for every order you're signed in for
 [] state management using Redux
-[] utilizing tailwind instead of css or sass

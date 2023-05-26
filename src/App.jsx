@@ -1,13 +1,14 @@
 import React from 'react'
 import './App.css'
-import Header from './components/Header'
+import DefaultLayout from './defaultLayout'
+
 
 function App() {
 
   return (
     <>
       <div className='app'>
-        <Header/>
+        <DefaultLayout/>
       </div>
     </>
   )
