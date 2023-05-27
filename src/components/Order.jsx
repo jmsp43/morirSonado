@@ -3,16 +3,17 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react'
 
 
-export default Order = () => {
+export const Order = () => {
       const [order, setOrder] = useState([])
 
+    
       useEffect(() => {
             getFoods()
             //calling to get data
             .then(res => setOrder(res.data))
             //setting the state with returned data
       }, [])
-      console.log(order)
+    console.log(order)
 
       return(
             <div>
@@ -28,3 +29,5 @@ export default Order = () => {
             </div>
         )
 }
+
+export default Order

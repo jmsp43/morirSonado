@@ -1,4 +1,5 @@
 import React from 'react'
+import Order from '../../components/Order'
 
 function Menu() {
   return (
@@ -6,7 +7,8 @@ function Menu() {
       <div className='belowNav'>
             <h1>Menu</h1>
             <h2>Entrees, Bevs, Desserts, ya tu sabes</h2>
-            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In dolores aliquid aperiam eaque incidunt quam, quidem, fugiat, iste ut nam repellat! Ad nam necessitatibus dolor vero provident cupiditate quod ullam?</h3>
+        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In dolores aliquid aperiam eaque incidunt quam, quidem, fugiat, iste ut nam repellat! Ad nam necessitatibus dolor vero provident cupiditate quod ullam?</h3>
+        <Order/>
             
       </div>
 </div>

@@ -1,11 +1,13 @@
 import axios from "axios";
-const baseURL = "http://localhost:3001/";
+const baseURL = "http://localhost:3001";
 
 
 //show all foods
 export const getFoods = () => {
   const URL = `${baseURL}/menu`;
   const response = axios.get(URL);
+  console.log(response)
+  console.log('hello')
   return response;
 };
 
