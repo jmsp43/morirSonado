@@ -9,3 +9,10 @@
   margin: 1rem;
 }
 
+.banner{
+  background-color: rgb(255, 140, 0);
+  margin-left:-10rem;
+  margin-right: -10rem;
+  padding: 3rem;
+}
+

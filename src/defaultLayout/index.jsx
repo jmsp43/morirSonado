@@ -13,7 +13,6 @@ import Catering from '../pages/Catering'
 function DefaultLayout() {
   return (
       <div>
-              
               <Router>
               <Header />
           <Routes>
