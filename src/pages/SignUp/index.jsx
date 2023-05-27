@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-// import { FontAwesomeIcon } from '@fortawesome/free-solid-svg-icons'
 import {
   faCheck,
   faTimes,
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const emailRef = useRef();
@@ -90,6 +90,7 @@ function SignUp() {
               event.preventDefault();
               setEmail(event.target.value);
             }}
+            autoComplete="off"
             //will tell users using screen readers if email is valid befor submission of form
             aria-invalid={validEmail ? "false" : "true"}
             //when email field selected
@@ -128,11 +129,8 @@ function SignUp() {
               event.preventDefault();
               setPassword(event.target.value);
             }}
-            //will tell users using screen readers if email is valid befor submission of form
             aria-invalid={validPassword ? "false" : "true"}
-            //when email field selected
             onFocus={() => setPasswordFocus(true)}
-            //when email field de-selected
             onBlur={() => {
               setPasswordFocus(false);
             }}
@@ -166,11 +164,8 @@ function SignUp() {
               event.preventDefault();
               setPassMatch(event.target.value);
             }}
-            //will tell users using screen readers if email is valid befor submission of form
             aria-invalid={validPassMatch ? "false" : "true"}
-            //when email field selected
             onFocus={() => setPassMatchFocus(true)}
-            //when email field de-selected
             onBlur={() => {
               setPassMatchFocus(false);
             }}
@@ -185,7 +180,12 @@ function SignUp() {
             <FontAwesomeIcon icon={faInfoCircle} />
             Passwords must match!
           </p>
+
+          <button disabled = {!validEmail || !validPassword || !validPassMatch ? true : false}>Sign Up</button>
         </form>
+
+        <p>Already Registered?</p>
+        <Link to = '/login'>Login here</Link>
       </div>
     </div>
   );
