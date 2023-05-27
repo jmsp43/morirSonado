@@ -1,23 +1,24 @@
 import axios from "axios";
-const baseURL = "http://localhost:3001/morirsonando";
+const baseURL = "http://localhost:3001/";
 
 
 //show all foods
 export const getFoods = () => {
-  const response = axios.get(baseURL);
+  const URL = `${baseURL}/menu`;
+  const response = axios.get(URL);
   return response;
 };
 
 //show one food
-export const getItem = (id) => {
-  const URL = `${baseURL}/${id}`;
+export const getItem = (name) => {
+  const URL = `${baseURL}/menu/${name}`;
   const response = axios.get(URL);
   return response;
 };
 
 //Edit an order
 export const editOrder = (id, updatedOrder) => {
-  const URL = `${baseURL}/${id}`;
+  const URL = `${baseURL}/updateOrder/${id}`;
   const response = axios.put(URL, updatedOrder);
   return response;
 };
@@ -31,7 +32,7 @@ export const createOrder = (order) => {
 
 // Delete an item from your order
 export const deleteItem = (id) => {
-  const URL = `${baseURL}/${id}`;
+  const URL = `${baseURL}/deleteItem/${id}`;
   const response = axios.delete(URL);
   return response;
 };
