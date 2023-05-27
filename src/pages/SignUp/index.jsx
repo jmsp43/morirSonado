@@ -57,8 +57,27 @@ function SignUp() {
     setErrorMsg("");
   }, [email, password, passMatch]);
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setSuccessMsg(true)
+
+
+}
+
+
   return (
     <div>
+      {/* {success ? (
+        <div>
+          <h2>Success!</h2>
+          <p>Already Registered?</p>
+        <Link to = '/login'>Login here</Link>
+        </div>
+      ) : (
+          <div>
+            <p>{errorMsg}</p>
+          </div>
+      )} */}
       <div className="belowNav">
         <h1>Register for a new account</h1>
         <h2>Join the family!</h2>
@@ -71,7 +90,7 @@ function SignUp() {
         </h4>
         <br />
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="email">
             Email:
             <span className={validEmail ? "valid" : "hide"}>
