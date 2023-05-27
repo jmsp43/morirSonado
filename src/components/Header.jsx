@@ -7,7 +7,7 @@ const Header = () => {
     <div>
       <img src={logo} />
       <h1>Morir Soñando</h1>
-      <h2>Authentic Dominican cuisine</h2>
+      <h2>Authentic Dominican Cuisine</h2>
       <nav>
         <Link to="/" className="link">Home</Link>
         <Link to="/menu" className="link">Order Here</Link>
