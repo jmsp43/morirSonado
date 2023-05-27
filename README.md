@@ -34,3 +34,5 @@ Stretch goals:
 [] Order history page
 [] loyalty points for every order you're signed in for
 [] state management using Redux
+[] accessibility features with aria
+[] responsive mobile design

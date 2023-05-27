@@ -1,6 +1,7 @@
 import { getFoods } from "../services/orders-api";
 import { useState, useEffect } from 'react'
 import { Link } from 'react'
+import Item from "./Item";
 
 
 export const Order = () => {
@@ -21,7 +22,8 @@ export const Order = () => {
                 {order.map((item) =>{
                     return (
                       <div className="menuItem">
-                        {item.name}
+                        <Item
+                          item={item} />
                         {/* <Link to={`/${item.name}`}>{item.name}</Link> */}
                         </div>
                     )

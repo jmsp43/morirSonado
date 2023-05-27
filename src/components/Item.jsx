@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Item() {
+function Item({item}) {
   return (
-    <div>Item</div>
+    <div>{item.name}</div>
   )
 }
 

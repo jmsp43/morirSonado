@@ -20,3 +20,19 @@
   margin: 1rem;
 }
 
+.hide{
+  display: none;
+}
+
+.valid{
+  display: inline-block;
+}
+
+.offscreen{
+  display: none;
+}
+
+.instructions{
+  display: block;
+}
+
