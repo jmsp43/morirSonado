@@ -20,8 +20,9 @@ export const Order = () => {
                 <ul>
                 {order.map((item) =>{
                     return (
-                        <div>
-                        <Link to={`/${item._id}`}>{item.name}</Link>
+                      <div className="menuItem">
+                        {item.name}
+                        {/* <Link to={`/${item.name}`}>{item.name}</Link> */}
                         </div>
                     )
                 })}
