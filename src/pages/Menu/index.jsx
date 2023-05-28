@@ -1,13 +1,21 @@
 import React from 'react'
-import Order from '../../components/Order'
+import { ShowFood } from '../../components/ShowFood'
 
 function Menu() {
   return (
       <div className='homePageCont'>
       <div className='belowNav'>
             <h1>Menu</h1>
-            <h2>Entrees, Bevs, Desserts, ya tu sabes</h2>
-        <Order/>
+        <nav>
+          <ul className='menuNav'>
+            <li>Appetizers</li>
+            <li>Entrees</li>
+            <li>Combos</li>
+            <li>Beverages</li>
+            <li>Desserts</li>
+          </ul>
+        </nav>
+        <ShowFood/>
       </div>
 </div>
   )

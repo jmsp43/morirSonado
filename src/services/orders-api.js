@@ -7,7 +7,14 @@ export const getFoods = () => {
   const URL = `${baseURL}/menu`;
   const response = axios.get(URL);
   console.log(response)
-  console.log('hello')
+  return response;
+};
+
+//show one section
+export const getSection = (section) => {
+  const URL = `${baseURL}/menu/${section}`;
+  const response = axios.get(URL);
+  console.log(response)
   return response;
 };
 

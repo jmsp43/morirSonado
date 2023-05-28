@@ -75,3 +75,34 @@ nav{
   display: flex;
   flex-direction: row;
 }
+
+.entireMenu{
+  background-color: #007f02;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.menuItem{
+  background-color: #e17c01;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.itemOnMenu{
+  padding:1rem;
+}
+
+.menuNav{
+  display: flex;
+  flex-direction: row;
+  background-color: darkorange;
+  padding: .5rem;
+  margin: 1.5rem;
+  border-radius: 2rem;
+}
+
+.menuNav, li{
+  margin: 1rem;
+}
