@@ -31,10 +31,8 @@ function Login() {
   return (
     <div className="homePageCont">
       <h1>Log in</h1>
-      <h2>Nice to see you again!</h2>
+      <h2>Bienvenidos de nuevo!</h2>
       <div className="belowNav">
-        <h1>Register for a new account</h1>
-        <h2>Join the family!</h2>
         <h4
           ref={errorRef}
           className={errorMsg ? "errorMsg" : "offscreen"}
@@ -129,7 +127,7 @@ function Login() {
 
         <p>New here?</p>
 
-        <Link to="/signup">Register for a New Account</Link>
+        <Link to="/signup" className="link">Register for a New Account</Link>
       </div>
     </div>
   );

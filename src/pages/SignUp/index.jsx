@@ -106,7 +106,7 @@ function SignUp() {
       )}
       <div className="belowNav">
         <h1>Register for a new account</h1>
-        <h2>Join the family!</h2>
+        <h2>Join the familia!</h2>
         <h4
           ref={errorRef}
           className={errorMsg ? "errorMsg" : "offscreen"}
@@ -221,7 +221,7 @@ function SignUp() {
 
         <p>Already Registered?</p>
 
-        <Link to = '/login'>Login here</Link>
+        <Link to = '/login' className="link">Login here</Link>
       </div>
     </div>
   );

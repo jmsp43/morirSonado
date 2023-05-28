@@ -6,7 +6,7 @@ Brunswick green: #034C3C
 Midnight green: #073635
 Licorice: #110B11
 
-This application will be a food delivery service for a family-owned and run Dominican food spot called Morir Soñado.
+This application will be a food delivery service for a family-owned and run Dominican food spot called Morir Soñando.
 
 As a user, you will be able to:
 

@@ -12,11 +12,11 @@ import Catering from '../pages/Catering'
 
 function DefaultLayout() {
   return (
-      <div>
+      <div className= 'defaultContainer'>
               <Router>
-              <Header />
+        <Header />
           <Routes>
-            <Route path = '/' element = {<Home/>}/>
+            <Route path = '/' className = 'link' element = {<Home/>}/>
             <Route path = '/cart' element = {<Cart/>}/>
             <Route path = '/error' element = {<Error/>}/>
             <Route path = '/login' element = {<Login/>}/>

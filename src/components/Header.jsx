@@ -10,10 +10,10 @@ const Header = () => {
       <h2>Authentic Dominican Cuisine</h2>
       <nav>
         <Link to="/" className="link">Home</Link>
-        <Link to="/menu" className="link">Order Here</Link>
+        <Link to="/menu" className="link">Order</Link>
         <Link to="/login" className="link">Login</Link>
         <Link to="/signUp" className="link">Sign Up</Link>
-        <Link to="/cart" className="link">View Cart</Link>
+        <Link to="/cart" className="link">Cart</Link>
         <Link to="/catering" className="link">Catering</Link>
       </nav>
     </div>
