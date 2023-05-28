@@ -23,12 +23,16 @@ As a user, you will be able to:
 [] delete delivery address
 [] see a receipt on screen after placing your order
 
-There will be four pages:
+There will be multiple "pages":
 
-[] Authentication page
-[] Ordering page
-[] Reciept page
+[] Authentication page for registering
+[] Authentication page for logging in
+[] Ordering page with menu
+[] Reciept page for after order is placed
 [] Error landing page
+[] Catering page with interest form
+[] Home landing page
+[] Cart viewing page
 
 Stretch goals:
 [] Order history page
