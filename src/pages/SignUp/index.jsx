@@ -84,12 +84,7 @@ function SignUp() {
 //     setPassword('');
 //     setPassMatch('');
 // } catch (error) {
-//     if (!error?.response) {
-//         setErrorMsg('No Server Response');
-//     } else if (error.response?.status === 409) {
-//         setErrorMsg('Username Taken');
-//     } else {
-//         setErrorMsg('Registration Failed')
+      //setErrorMsg('Registration Failed')
 //     }
 //     errorRef.current.focus();
 //     }
