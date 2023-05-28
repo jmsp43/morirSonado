@@ -6,7 +6,6 @@ const baseURL = "http://localhost:3001";
 export const getFoods = () => {
   const URL = `${baseURL}/menu`;
   const response = axios.get(URL);
-  console.log(response)
   return response;
 };
 
@@ -14,7 +13,6 @@ export const getFoods = () => {
 export const getSection = (section) => {
   const URL = `${baseURL}/menu/${section}`;
   const response = axios.get(URL);
-  console.log(response)
   return response;
 };
 
