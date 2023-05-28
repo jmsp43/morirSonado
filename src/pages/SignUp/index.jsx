@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import {
   faCheck,
@@ -7,6 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+
+const signUpURL= '/signup'
 
 function SignUp() {
   const emailRef = useRef();
@@ -48,8 +51,8 @@ function SignUp() {
     if (password.length >= 8) {
       valid = true;
       setValidPassword(valid);
-      const match = password === passMatch;
-      setPassMatch(match);
+      setPassMatch(passMatch === password);
+      console.log(passMatch === password)
     }
   }, [password, passMatch]);
 
@@ -62,22 +65,50 @@ function SignUp() {
     setSuccessMsg(true)
 
 
+    //will attempt when form fully works
+//     try {
+//       const response = await axios.post(signUpURL,
+//         JSON.stringify({ email, password }),
+//         {
+//             headers: { 'Content-Type': 'application/json' },
+//             withCredentials: true
+//         }
+//     );
+//     console.log(response?.data);
+//     console.log(response?.accessToken);
+//     console.log(JSON.stringify(response))
+      
+//     setSuccessMsg(true);
+
+//     setEmail('');
+//     setPassword('');
+//     setPassMatch('');
+// } catch (error) {
+//     if (!error?.response) {
+//         setErrorMsg('No Server Response');
+//     } else if (error.response?.status === 409) {
+//         setErrorMsg('Username Taken');
+//     } else {
+//         setErrorMsg('Registration Failed')
+//     }
+//     errorRef.current.focus();
+//     }
+
 }
 
 
   return (
     <div>
-      {/* {success ? (
+      {successMsg ? (
         <div>
           <h2>Success!</h2>
-          <p>Already Registered?</p>
-        <Link to = '/login'>Login here</Link>
+        <Link to = '/login'>Login with your new account</Link>
         </div>
       ) : (
           <div>
             <p>{errorMsg}</p>
           </div>
-      )} */}
+      )}
       <div className="belowNav">
         <h1>Register for a new account</h1>
         <h2>Join the family!</h2>
@@ -93,12 +124,8 @@ function SignUp() {
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">
             Email:
-            <span className={validEmail ? "valid" : "hide"}>
-              <FontAwesomeIcon icon={faCheck} />
-            </span>
-            <span className={validEmail || !email ? "hide" : "invalid"}>
-              <FontAwesomeIcon icon={faTimes} />
-            </span>
+              <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"}/>
+              <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"}/>
           </label>
           <input
             type="text"
@@ -133,17 +160,14 @@ function SignUp() {
 
           <label htmlFor="password">
             Password:
-            <span className={validPassword ? "valid" : "hide"}>
-              <FontAwesomeIcon icon={faCheck} />
-            </span>
-            <span className={validPassword || !password ? "hide" : "invalid"}>
-              <FontAwesomeIcon icon={faTimes} />
-            </span>
+              <FontAwesomeIcon icon={faCheck} className={validPassword ? "valid" : "hide"}/>
+              <FontAwesomeIcon icon={faTimes} className={validPassword || !password ? "hide" : "invalid"}/>
           </label>
           <input
             type="password"
             id="password"
             required
+            value={password}
             onChange={(event) => {
               event.preventDefault();
               setPassword(event.target.value);
@@ -168,12 +192,8 @@ function SignUp() {
 
           <label htmlFor="passMatch">
             Confirm Password:
-            <span className={validPassMatch && passMatch ? "valid" : "hide"}>
-              <FontAwesomeIcon icon={faCheck} />
-            </span>
-            <span className={validPassMatch || !passMatch ? "hide" : "invalid"}>
-              <FontAwesomeIcon icon={faTimes} />
-            </span>
+              <FontAwesomeIcon icon={faCheck} className={validPassMatch && passMatch ? "valid" : "hide"}/>
+              <FontAwesomeIcon icon={faTimes} className={validPassMatch || !passMatch ? "hide" : "invalid"} />
           </label>
           <input
             type="password"
@@ -183,6 +203,7 @@ function SignUp() {
               event.preventDefault();
               setPassMatch(event.target.value);
             }}
+            value = {passMatch}
             aria-invalid={validPassMatch ? "false" : "true"}
             onFocus={() => setPassMatchFocus(true)}
             onBlur={() => {
@@ -199,11 +220,12 @@ function SignUp() {
             <FontAwesomeIcon icon={faInfoCircle} />
             Passwords must match!
           </p>
-
+          <br/>
           <button disabled = {!validEmail || !validPassword || !validPassMatch ? true : false}>Sign Up</button>
         </form>
 
         <p>Already Registered?</p>
+
         <Link to = '/login'>Login here</Link>
       </div>
     </div>

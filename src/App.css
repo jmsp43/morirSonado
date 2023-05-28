@@ -36,3 +36,18 @@
   display: block;
 }
 
+.belowNav{
+  display: flex;
+  flex-direction: column;
+}
+
+form{
+  background-color: #e17c01;
+  padding:2rem;
+}
+
+form, p{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
