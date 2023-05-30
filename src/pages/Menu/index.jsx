@@ -1,15 +1,16 @@
 import React from 'react'
 import { ShowFood } from '../../components/ShowFood'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+
 
 function Menu() {
   let clickedFood = ''
-
+  const [clickedFoodType, setClickedFoodType] = useState(null)
 
   const handleClick = (event) => {
     event.preventDefault()
-    clickedFood = event.target.value
-    clickedFood = clickedFood.toLowerCase()
+    setClickedFoodType(event.target.value.toLowerCase())
+    // clickedFood = clickedFood.toLowerCase()
   }
 
   return (
@@ -26,7 +27,7 @@ function Menu() {
           </ul>
         </nav>
         <ShowFood
-          foodType={clickedFood} />
+          foodType={clickedFoodType} />
       </div>
 </div>
   )
