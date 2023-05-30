@@ -1,4 +1,5 @@
 import React from 'react'
+import Events from '../../components/Events'
 
 function Catering() {
   return (
@@ -6,7 +7,7 @@ function Catering() {
       <div className='belowNav'>
             <h1>Catering</h1>
             <h2>Events big and small!</h2>
-            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In dolores aliquid aperiam eaque incidunt quam, quidem, fugiat, iste ut nam repellat! Ad nam necessitatibus dolor vero provident cupiditate quod ullam?</h3>
+            <Events/>
             
       </div>
 </div>

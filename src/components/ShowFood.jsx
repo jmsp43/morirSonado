@@ -11,7 +11,6 @@ export const ShowFood = ({foodType}) => {
             //calling to get data
                 .then(res => setFood(res.data))
             //setting the state with returned data
-        console.log(foodType)
       }, [])
 
 
@@ -39,6 +38,8 @@ export const ShowFood = ({foodType}) => {
 
   if (foodType === 'appetizers') {
     mappedFood = appetizers
+    //setting the state didn't work either
+    // setFood(mappedFood)
   } else if (foodType === 'entrees') {
     mappedFood = entrees
   } else if (foodType === 'combos') {
