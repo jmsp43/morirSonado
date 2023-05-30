@@ -39,15 +39,15 @@ const ItemInfo = () => {
   return (
     <div>
       {plate ?
-        <div>
+        <div className="plate">
           <h3>{plate.name}</h3>
           <p>${plate.price}</p>
           <p>{plate.description}</p>
           <p>Show image here</p>
           <div className="inCart">
-            <a>-</a>
+            <a className="decrease">-</a>
             <span> {plate.amountOrdered} in your cart </span>
-            <a>+</a>
+            <a className="increase">+</a>
           </div>
 
         </div>

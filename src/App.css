@@ -106,3 +106,17 @@ nav{
 .menuNav, li{
   margin: 1rem;
 }
+
+.decrease, .increase{
+  font-size: xx-large;
+  border-radius: 1rem;
+  background-color: #007f02;
+  box-shadow: #f6b76a 1px 1px 1px 1px;
+}
+
+.plate{
+  background-color: #e17c01;
+  border-radius: 3rem;
+  padding: 1rem;
+  margin: .75rem;
+}
