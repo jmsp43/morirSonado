@@ -1,40 +1,59 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { getItem } from "../../services/orders-api";
 
-const ItemInfo = ({ item }) => {
-      const [plate, setPlate] = useState({})
-  
+const ItemInfo = () => {
+  const [plate, setPlate] = useState({});
+
+  let { name } = useParams()
+
       useEffect(() => {
-        getItem()
-            //calling to get data
-                .then(res => setPlate(res.data))
-            //setting the state with returned data
+       fetchData()
       }, [])
-      
-      // const [quantity, setQuantity] = useState(0)
 
-      const handleDecrease = (event) => {
-        event.preventDefault()
-        console.log(foodItem.amountOrdered)
-        foodItem['amountOrdered'] = foodItem.amountOrdered--
-        console.log('decreased, '+ foodItem.amountOrdered)
-      }
+  async function fetchData() {
     
-      const handleIncrease = (event) => {
-        event.preventDefault()
-        console.log(foodItem.amountOrdered)
-        foodItem['amountOrdered'] = foodItem.amountOrdered++
-        console.log('increased, '+ foodItem.amountOrdered)
-      }
-  return (
-        <div>
-                    <button className= 'decrease quantityBtn' onClick={handleDecrease}>-</button>
-      <span> {foodItem.amountOrdered} </span>
-      <button className='increase quantityBtn' onClick = {handleIncrease}>+</button>
-            <p>info about item</p>
-    </div>
-  )
-}
+    let result = await getItem(name)
+    setPlate(result.data[0])
+    console.log(result)
+    console.log(plate)
+  }
 
-export default ItemInfo
+  // const [quantity, setQuantity] = useState(0)
+
+  const handleDecrease = (event) => {
+    event.preventDefault();
+    console.log(foodItem.amountOrdered);
+    foodItem["amountOrdered"] = foodItem.amountOrdered--;
+    console.log("decreased, " + foodItem.amountOrdered);
+  };
+
+  const handleIncrease = (event) => {
+    event.preventDefault();
+    console.log(foodItem.amountOrdered);
+    foodItem["amountOrdered"] = foodItem.amountOrdered++;
+    console.log("increased, " + foodItem.amountOrdered);
+  };
+
+  return (
+    <div>
+      {plate ?
+        <div>
+          <h3>{plate.name}</h3>
+          <p>${plate.price}</p>
+          <p>{plate.description}</p>
+          <p>Show image here</p>
+          <div className="inCart">
+            <a>-</a>
+            <span> {plate.amountOrdered} in your cart </span>
+            <a>+</a>
+          </div>
+
+        </div>
+        : <p>Not found</p>}
+    </div>
+  );
+};
+
+export default ItemInfo;

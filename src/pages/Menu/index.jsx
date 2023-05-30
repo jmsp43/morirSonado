@@ -4,7 +4,6 @@ import { useRef, useState } from 'react'
 
 
 function Menu() {
-  let clickedFood = ''
   const [clickedFoodType, setClickedFoodType] = useState(null)
 
   const handleClick = (event) => {

@@ -1,6 +1,8 @@
 import { getFoods } from "../services/orders-api";
 import { useState, useEffect } from 'react'
 import FoodItem from "./FoodItem";
+import { Routes, Route } from "react-router-dom";
+import ItemInfo from "../pages/ItemInfo";
 
 
 export const ShowFood = ({foodType}) => {
@@ -36,8 +38,6 @@ export const ShowFood = ({foodType}) => {
     plate.section === 'Desserts'
   )
 
-    console.log(bevs)
-    console.log(desserts)
   if (foodType === 'appetizers') {
     setMappedFood(appetizers)
   } else if (foodType === 'entrees') {
@@ -53,18 +53,28 @@ export const ShowFood = ({foodType}) => {
   
 
       return(
-            <div className="entireMenu">
+        <div className="entireMenu">
+          {/* <Routes>
+            <Route path="/menu/:name" element={<ItemInfo />} />
+          </Routes> */}
           <ul>
-            {/* doesn't work as mappedFood.map */}
             {mappedFood ? mappedFood.map((foodItem) => {
 
                     return (
-                        <div className="menuItem" key={foodItem._id}>
+                      <div className="menuItem" key={foodItem._id}>
                         <FoodItem
                           foodItem={foodItem} />
-                        </div>
+                        {/* <ItemInfo foodItem = {foodItem} /> */}
+                      </div>
                     )
-                }): <p>mappedFood empty</p>}
+                }): food.map((foodItem) => {
+                  return (
+                      <div className="menuItem" key={foodItem._id}>
+                      <FoodItem
+                        foodItem={foodItem} />
+                      </div>
+                  )
+              })}
               </ul> 
             </div>
         )

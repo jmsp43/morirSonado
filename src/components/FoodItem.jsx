@@ -1,17 +1,17 @@
-import React from 'react'
-import { useState, useRef } from 'react'
-import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React from "react";
+import { useState, useRef } from "react";
+import { Link, Routes, Route } from "react-router-dom";
+import ItemInfo from "../pages/ItemInfo";
 
 function FoodItem({ foodItem }) {
-
-
   return (
-<Link to={`/menu/${foodItem.name}`} className='itemOnMenu'>
-      <h3>{foodItem.name}</h3>
+    <div className="itemOnMenu">
+      <h3><Link to={`/menu/${foodItem.name}`}>{foodItem.name}</Link></h3>
       <span> </span>
       <h4>${foodItem.price}</h4>
-    </Link>
-  )
+
+      </div>
+  );
 }
 
-export default FoodItem
+export default FoodItem;
