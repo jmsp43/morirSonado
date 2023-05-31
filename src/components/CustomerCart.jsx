@@ -1,14 +1,25 @@
 import React from 'react'
-import { useState } from 'react'
 
-const CustomerCart = () => {
-      const [cart, setCart] = useState(null)
-      //get info from increase/decrease buttons to set state with
-
+const CustomerCart = ({ cart, updateAddCart, updateDeleteCart }) => {
+      
+      
 
   return (
-        <div>
-              {cart === null ? <p>Your Cart is Empty!</p> : <p>Items in Your Cart:</p>}
+        <div className='cartDiv'>
+              {cart === null ? <p>Your Cart is Empty!</p> : <h3>Items in Your Cart: {cart.map(plate => {
+                    return (
+                          <div className = 'cartItem' key={plate._id}>
+                                <br/>
+                                {plate.name}
+                                <br/>
+                                ({plate.description})
+                                <br/>
+                                ${plate.price}
+                                <br/>
+                        </div>
+                    )
+              }
+              )}</h3>}
               <br />
               <p>Stuff in cart goes here</p>
         </div>

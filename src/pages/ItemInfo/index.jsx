@@ -3,11 +3,9 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getItem } from "../../services/orders-api";
 
-const ItemInfo = () => {
+const ItemInfo = ({cart, updateAddCart, updateDeleteCart}) => {
   const [plate, setPlate] = useState({});
   const [quantity, setQuantity] = useState(0)
-  const [cart, setCart] = useState([])
-
 
   let { name } = useParams()
 
@@ -17,18 +15,18 @@ const ItemInfo = () => {
 
   async function fetchData() {
     let result = await getItem(name)
+    //use updatecart instead
     setPlate(result.data[0])
   }
 
   const addToCart = () => {
     setQuantity((quantity) => quantity + 1)
-    setCart([...cart, plate])
+    updateAddCart(plate)
   }
 
   const deleteFromCart = () => {
     setQuantity((quantity) => quantity - 1)
-    cart.pop()
-    setCart(cart)
+    updateDeleteCart()
   }
 
   return (
