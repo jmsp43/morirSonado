@@ -6,6 +6,7 @@ import { getItem } from "../../services/orders-api";
 const ItemInfo = () => {
   const [plate, setPlate] = useState({});
   const [quantity, setQuantity] = useState(0)
+  const [cart, setCart] = useState([])
 
 
   let { name } = useParams()
@@ -20,7 +21,9 @@ const ItemInfo = () => {
   }
 
   const addToCart = () => {
-      setQuantity((quantity) => quantity + 1)
+    setQuantity((quantity) => quantity + 1)
+    setCart([...cart, plate])
+    console.log(cart)
   }
 
   const deleteFromCart = () => {
