@@ -5,6 +5,8 @@ import { getItem } from "../../services/orders-api";
 
 const ItemInfo = () => {
   const [plate, setPlate] = useState({});
+  const [quantity, setQuantity] = useState(0)
+
 
   let { name } = useParams()
 
@@ -13,28 +15,17 @@ const ItemInfo = () => {
       }, [])
 
   async function fetchData() {
-    
     let result = await getItem(name)
     setPlate(result.data[0])
-    console.log(result)
-    console.log(plate)
   }
 
-  // const [quantity, setQuantity] = useState(0)
+  const addToCart = () => {
+      setQuantity((quantity) => quantity + 1)
+  }
 
-  const handleDecrease = (event) => {
-    event.preventDefault();
-    console.log(foodItem.amountOrdered);
-    foodItem["amountOrdered"] = foodItem.amountOrdered--;
-    console.log("decreased, " + foodItem.amountOrdered);
-  };
-
-  const handleIncrease = (event) => {
-    event.preventDefault();
-    console.log(foodItem.amountOrdered);
-    foodItem["amountOrdered"] = foodItem.amountOrdered++;
-    console.log("increased, " + foodItem.amountOrdered);
-  };
+  const deleteFromCart = () => {
+    setQuantity((quantity) => quantity - 1)
+  }
 
   return (
     <div>
@@ -45,9 +36,11 @@ const ItemInfo = () => {
           <p>{plate.description}</p>
           <p>Show image here</p>
           <div className="inCart">
-            <a className="decrease">-</a>
-            <span> {plate.amountOrdered} in your cart </span>
-            <a className="increase">+</a>
+            <button className="decrease" onClick={deleteFromCart}>-
+        </button>
+            <span> {quantity} in your cart </span>
+            <button className="increase" onClick={addToCart}>+
+        </button>
           </div>
 
         </div>
