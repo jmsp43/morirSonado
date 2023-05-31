@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const CustomerCart = ({ cart, updateAddCart, updateDeleteCart }) => {
-      
-      
+      let filteredCart = []
+
+      const findDuplicates = (cartArr) => {
+            return filteredCart = cartArr.filter((plate,
+                  index) => cartArr.indexOf(plate) === index);
+      }
+
+      useEffect(() => {
+            findDuplicates(cart)
+      },[])
 
   return (
         <div className='cartDiv'>
-              {cart === null ? <p>Your Cart is Empty!</p> : <h3>Items in Your Cart: {cart.map(plate => {
+              {cart.length === 0 ? <h3>Your Cart is Empty!</h3> : <h3>Items in Your Cart: {findDuplicates(cart).map(plate => {
                     return (
                           <div className = 'cartItem' key={plate._id}>
                                 <br/>
@@ -15,13 +23,12 @@ const CustomerCart = ({ cart, updateAddCart, updateDeleteCart }) => {
                                 ({plate.description})
                                 <br/>
                                 ${plate.price}
-                                <br/>
+                                <br />
+                                Quantity:
                         </div>
                     )
               }
               )}</h3>}
-              <br />
-              <p>Stuff in cart goes here</p>
         </div>
   )
 }
