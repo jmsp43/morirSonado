@@ -15,7 +15,6 @@ const ItemInfo = ({cart, updateAddCart, updateDeleteCart}) => {
 
   async function fetchData() {
     let result = await getItem(name)
-    //use updatecart instead
     setPlate(result.data[0])
   }
 

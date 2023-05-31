@@ -32,7 +32,7 @@ export const editOrder = (id, updatedOrder) => {
 
 //Create an order
 export const createOrder = (order) => {
-  const URL = baseURL;
+  const URL = `${baseURL}/newOrder`;
   const response = axios.post(URL, order);
   return response;
 };

@@ -32,7 +32,8 @@ function DefaultLayout() {
         <Routes>
           <Route path="/" className="link" element={<Home />} />
           <Route path="/cart" element={<Cart cart={cart} updateAddCart={updateAddCart}
-          updateDeleteCart={updateDeleteCart} />} />
+            updateDeleteCart={updateDeleteCart}
+            />} />
           <Route path="/error" element={<Error />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Menu/*" element={<Menu />} />
@@ -41,7 +42,8 @@ function DefaultLayout() {
           <Route path="/catering" element={<Catering />} />
           <Route path="/Menu/:name" element={<ItemInfo cart={cart}
             updateAddCart={updateAddCart}
-            updateDeleteCart={updateDeleteCart} />}
+            updateDeleteCart={updateDeleteCart}
+            />}
           />
         </Routes>
 
