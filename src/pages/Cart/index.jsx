@@ -4,11 +4,6 @@ import CustomerCart from '../../components/CustomerCart'
 
 function Cart({ cart, updateAddCart, updateDeleteCart, quantity, increaseQuant, decreaseQuant }) {
   
-  const makeNewOrder = (event) => {
-    event.preventDefault()
-    const order = event.target.description.value
-    console.log(order)
-}
 
 
   return (
@@ -16,6 +11,7 @@ function Cart({ cart, updateAddCart, updateDeleteCart, quantity, increaseQuant, 
       <div className='belowNav'>
             <h1>Your Order</h1>
         <h2>We aim to please!</h2>
+
 
 
         <CustomerCart cart={cart} updateAddCart={updateAddCart}

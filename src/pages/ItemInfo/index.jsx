@@ -28,6 +28,7 @@ const ItemInfo = ({cart, updateAddCart, updateDeleteCart}) => {
     updateDeleteCart()
   }
 
+
   return (
     <div>
       {plate ?

@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
 import { editOrder } from '../services/orders-api'
+import { useState } from 'react'
+import { createOrder } from '../services/orders-api'
 
 const CustomerCart = ({ cart, updateAddCart, updateDeleteCart}) => {
       let filteredCart = []
+      const [price, setPrice] = useState(0)
 
       const filterDuplicates = (cartArr) => {
-            return filteredCart = cartArr.filter((plate,
+            return cartArr.filter((plate,
                   index) => cartArr.indexOf(plate) === index)
       }
 
@@ -17,14 +20,33 @@ const CustomerCart = ({ cart, updateAddCart, updateDeleteCart}) => {
 
       useEffect(() => {
             filterDuplicates(cart)
+            let totalPrice = 0
+            for (let i = 0; i < cart.length; i++) {
+                  totalPrice += cart[i].price
+            }
+            setPrice(totalPrice)
       },[cart])
 
-let total = 0
+
+      async function handleSubmit(event) {
+            event.preventDefault()
+            let obj = {
+                  price: price,
+                  items: filterDuplicates(cart)
+            }
+            await createOrder(obj)
+            console.log('submit done')
+      }
 
   return (
         <div className='cartDiv'>
+              <form onSubmit = {handleSubmit}>
+                    <input type = 'submit'/>
+            </form>
+              
+
+
               {cart.length === 0 ? <h3>Your Cart is Empty!</h3> : <h3>Items in Your Cart: {filterDuplicates(cart).map(plate => {
-                    total += plate.price
                     return (
                           <div className = 'cartItem' key={plate._id}>
                                 <br/>
@@ -39,9 +61,9 @@ let total = 0
                     )
               }
               )}</h3>}
-              <h4>Total: ${total}</h4>
+              <h4>Total: ${price}</h4>
               <br/>
-              <button>Check out</button>
+              
         </div>
   )
 }
