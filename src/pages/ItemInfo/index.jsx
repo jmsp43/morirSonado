@@ -23,11 +23,12 @@ const ItemInfo = () => {
   const addToCart = () => {
     setQuantity((quantity) => quantity + 1)
     setCart([...cart, plate])
-    console.log(cart)
   }
 
   const deleteFromCart = () => {
     setQuantity((quantity) => quantity - 1)
+    cart.pop()
+    setCart(cart)
   }
 
   return (
