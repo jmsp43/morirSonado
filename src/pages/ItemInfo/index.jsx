@@ -14,8 +14,10 @@ const ItemInfo = ({cart, updateAddCart, updateDeleteCart}) => {
       }, [])
 
   async function fetchData() {
+    console.log(name)
     let result = await getItem(name)
     setPlate(result.data[0])
+    console.log(result)
   }
 
   const addToCart = () => {

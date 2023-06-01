@@ -4,7 +4,7 @@ import { getOrders } from "../../services/orders-api";
 import { useState, useEffect } from "react";
 
 function Receipt() {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(null);
 
   useEffect(() => {
     fetchData();
@@ -13,6 +13,7 @@ function Receipt() {
   async function fetchData() {
     let result = await getOrders();
     setOrders(result.data);
+    console.log(result.data)
   }
 
   const deleteAnOrder = (id) => {
