@@ -4,21 +4,22 @@ import { getOrders } from "../../services/orders-api";
 import { useState, useEffect } from "react";
 
 function Receipt() {
-  const deleteAnOrder = () => {
-    deleteOrder(id);
-  };
-
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     fetchData();
-  }, [orders]);
+  }, []);
 
   async function fetchData() {
     let result = await getOrders();
     setOrders(result.data);
     console.log(orders)
   }
+
+  const deleteAnOrder = (id) => {
+    deleteOrder(id);
+  };
+
 
   return (
     <div className="entireMenu">
@@ -50,7 +51,7 @@ function Receipt() {
               {order.items[0].description}
                 <br />
                 <div>
-                  <button onClick={deleteAnOrder}>Delete Order</button>
+                  <button onClick={deleteAnOrder(order._id)}>Delete Order</button>
                 </div>
               </div>
             );

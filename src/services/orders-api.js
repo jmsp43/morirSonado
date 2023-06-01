@@ -25,7 +25,7 @@ export const getItem = async (name) => {
 
 //Edit an order
 export const editOrder = async (id, updatedOrder) => {
-  const URL = `${baseURL}/updateOrder/${id}`;
+  const URL = `${baseURL}/${id}`;
   const response = await axios.put(URL, updatedOrder);
   return response;
 };
@@ -40,7 +40,7 @@ export  const createOrder = async (order) => {
 
 // Delete an item from your order
 export const deleteOrder = async (id) => {
-  const URL = `${baseURL}/deleteItem/${id}`;
+  const URL = `${baseURL}/${id}`;
   const response = await axios.delete(URL);
   return response;
 };
