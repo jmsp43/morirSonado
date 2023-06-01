@@ -10,6 +10,7 @@ This application is a food ordering service for a family-owned and run Dominican
 # View the application here!
 https://morir-sonando.vercel.app/
 
+
 ## AAU
 As a user, when this project is completed you will be able to:
 
@@ -66,12 +67,13 @@ run ' npm i ' in your terminal to install any neccessary dependencies
 
 ## Achievements
 
-
+I am proud that I have been able to achieve a functional, relatively aethetically pleasing full-stack application in less than a week.
 
 ## Challenges/Unsolved Issues
 
+My edit and delete routes refused to cooperate until the last second, with the main issue being syntax errors. Connecting my frontt-end and back-end applications proved to be much more difficult than I inititally anticipated (which is why I planned a much bigger application to be done by 6/1). That being said, I had no issues with my index and show routes, mainly my edit and delete routes. I learned that even if a function requires an argument, if you 'call' (aka have an argument of that function) that function in your JSX, the application will see that and want to run that function immediately, forever.Example: In my Delete button, On Click it was supposed to be running my deleteAnOrder function with the argument of 'id', but because it was in my JSX, React seen that and assumed that I was calling it not only when I click the button, but every time the page loads. The fix for that was to call my deleteAnOrder function within an anonymous callback function inside my onClick property. 
 
-
+As for unsolved issues and future features, I have listed above all of the feautures that I have yet to implement but plan to in the near future.
 
 ## Acknowledgements
 Big thank yous to everyone who helped me along the way!
