@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { editItem } from "../services/orders-api";
 
 function FoodItem({ foodItem }) {
@@ -14,7 +14,7 @@ function FoodItem({ foodItem }) {
       description: event.target.description.value,
       price: event.target.price.value,
     };
-    editItem(id, updatedItem).then(() => nav("/menu"));
+    editItem(id, updatedItem).then(() => nav("/"));
   };
 
   return (

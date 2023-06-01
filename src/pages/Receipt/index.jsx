@@ -2,9 +2,11 @@ import React from "react";
 import { deleteOrder } from "../../services/orders-api";
 import { getOrders } from "../../services/orders-api";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Receipt() {
   const [orders, setOrders] = useState(null);
+  const nav = useNavigate()
 
   useEffect(() => {
     fetchData();
@@ -17,11 +19,11 @@ function Receipt() {
   }
 
   const deleteAnOrder = (id) => {
-    deleteOrder(id);
+    deleteOrder(id).then(()=>nav('/'));
     console.log(id)
     console.log('delete an order function running')
-  };
 
+  };
 
   return (
     <div className="entireMenu">

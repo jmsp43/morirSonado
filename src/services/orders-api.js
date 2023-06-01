@@ -42,6 +42,5 @@ export  const createOrder = async (order) => {
 export const deleteOrder = async (id) => {
   const URL = `${baseURL}/${id}`;
   const response = await axios.delete(URL);
-  // console.log(response)
   return response;
 };
