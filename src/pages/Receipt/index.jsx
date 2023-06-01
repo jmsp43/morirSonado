@@ -13,11 +13,12 @@ function Receipt() {
   async function fetchData() {
     let result = await getOrders();
     setOrders(result.data);
-    console.log(orders)
   }
 
   const deleteAnOrder = (id) => {
     deleteOrder(id);
+    console.log(id)
+    console.log('delete an order function running')
   };
 
 
@@ -28,8 +29,7 @@ function Receipt() {
           orders.map((order) => {
             return (
               <div className="orderDiv" key={order._id}>
-                Order:
-                <br />
+                <h3>Order:</h3>
                 {/* seperate map of items within each order here */}
                 {/* {orders.items.map((item) => {
                   return (
@@ -45,7 +45,7 @@ function Receipt() {
                     </div>
                   );
                 })} */}
-              <br/>
+          
               {order.items[0].name}
               <br/>
               {order.items[0].description}
@@ -53,6 +53,8 @@ function Receipt() {
                 <div>
                   <button onClick={deleteAnOrder(order._id)}>Delete Order</button>
                 </div>
+                <br />
+                <br />
               </div>
             );
           })

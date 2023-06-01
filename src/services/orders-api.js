@@ -1,5 +1,6 @@
 import axios from "axios";
 const baseURL = "http://localhost:3001";
+const newBaseURL = 'https://morir-sonando-backend.vercel.app/'
 
 
 //show all foods
@@ -26,6 +27,7 @@ export const getItem = async (name) => {
 //Edit an order
 export const editItem = async (id, updatedItem) => {
   const URL = `${baseURL}/${id}`;
+  console.log(updatedItem)
   const response = await axios.put(URL, updatedItem);
   return response;
 };
@@ -42,5 +44,6 @@ export  const createOrder = async (order) => {
 export const deleteOrder = async (id) => {
   const URL = `${baseURL}/${id}`;
   const response = await axios.delete(URL);
+  // console.log(response)
   return response;
 };
