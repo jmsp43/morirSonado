@@ -134,3 +134,11 @@ nav{
   padding: 1.25rem;
   margin: 1rem;
 }
+
+.orderDiv{
+  background-color:#e17c01;
+}
+
+.itemsDiv{
+  background-color: #f6b76a;
+}

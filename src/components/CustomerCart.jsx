@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
-import { editOrder } from '../services/orders-api'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { createOrder } from '../services/orders-api'
 
-const CustomerCart = ({ cart, updateAddCart, updateDeleteCart}) => {
+const CustomerCart = ({ cart, updateAddCart, updateDeleteCart }) => {
+      
+      const nav = useNavigate()
       let filteredCart = []
       const [price, setPrice] = useState(0)
 
@@ -36,6 +38,7 @@ const CustomerCart = ({ cart, updateAddCart, updateDeleteCart}) => {
             }
             await createOrder(obj)
             console.log('submit done')
+            nav('/receipt')
       }
 
   return (
@@ -44,8 +47,6 @@ const CustomerCart = ({ cart, updateAddCart, updateDeleteCart}) => {
                     <input type = 'submit'/>
             </form>
               
-
-
               {cart.length === 0 ? <h3>Your Cart is Empty!</h3> : <h3>Items in Your Cart: {filterDuplicates(cart).map(plate => {
                     return (
                           <div className = 'cartItem' key={plate._id}>

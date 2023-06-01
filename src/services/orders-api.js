@@ -9,6 +9,12 @@ export const getFoods = async () => {
   return response;
 };
 
+//show all orders
+export const getOrders = async () => {
+  const URL = `${baseURL}/receipt`;
+  const response = await axios.get(URL);
+  return response;
+};
 
 //show one food
 export const getItem = async (name) => {
@@ -33,7 +39,7 @@ export  const createOrder = async (order) => {
 };
 
 // Delete an item from your order
-export const deleteItem = async (id) => {
+export const deleteOrder = async (id) => {
   const URL = `${baseURL}/deleteItem/${id}`;
   const response = await axios.delete(URL);
   return response;

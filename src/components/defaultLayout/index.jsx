@@ -38,7 +38,9 @@ function DefaultLayout() {
           <Route path="/error" element={<Error />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Menu/*" element={<Menu />} />
-          <Route path="/receipt" element={<Receipt />} />
+          <Route path="/receipt" element={<Receipt
+            // orders={orders}
+          />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/catering" element={<Catering />} />
           <Route path="/Menu/:name" element={<ItemInfo cart={cart}

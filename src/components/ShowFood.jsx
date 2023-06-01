@@ -54,9 +54,6 @@ export const ShowFood = ({foodType}) => {
 
       return(
         <div className="entireMenu">
-          {/* <Routes>
-            <Route path="/menu/:name" element={<ItemInfo />} />
-          </Routes> */}
           <ul>
             {mappedFood ? mappedFood.map((foodItem) => {
 
