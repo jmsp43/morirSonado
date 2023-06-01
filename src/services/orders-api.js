@@ -24,9 +24,9 @@ export const getItem = async (name) => {
 };
 
 //Edit an order
-export const editOrder = async (id, updatedOrder) => {
+export const editItem = async (id, updatedItem) => {
   const URL = `${baseURL}/${id}`;
-  const response = await axios.put(URL, updatedOrder);
+  const response = await axios.put(URL, updatedItem);
   return response;
 };
 
