@@ -51,7 +51,7 @@ function Receipt() {
               {order.items[0].description}
                 <br />
                 <div>
-                  <button onClick={deleteAnOrder(order._id)}>Delete Order</button>
+                  <button onClick={() => { deleteAnOrder(order._id) }}>Delete Order</button>
                 </div>
                 <br />
                 <br />
